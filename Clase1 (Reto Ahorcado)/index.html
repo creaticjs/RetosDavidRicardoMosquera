@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>AHORCADO</title>
+</head>
+<body>
+  <h1>AHORCADO</h1>
+  <div>
+    <span>Recuerde que cada seleccione una palabra se reinicia el juego </span><button onclick="palabraAleatoria()">Palabra aleatoria</button>
+    <br><br>
+    <div id="jugarDeNuevo" style="display:none">
+      <span>Jugar de nuevo con la misma palabra</span>
+      <button onclick="palabraGuardada()">Jugar</button>
+    </div>
+    <div id="contenedor" style="display: none">
+      <span>Letra: </span>
+      <input type="text" name="letra" id="letra" maxlength="1" >    
+      <button id="intento" onclick="buscarLetra()">Probar Letra</button>
+      <br>
+      <p id="intentos"></p>      
+      <span id="palabraAleatoria"></span>
+      <br><br>
+      <img id="imagen" style="display: none" src="">
+    </div>
+  </div>
+  <script src="js/ahorcado.js"></script>
+</body>
+</html>

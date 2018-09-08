@@ -1,0 +1,22 @@
+body {
+  background-color: beige;
+  text-align: center;
+  font-size: 25px;
+}
+
+.spans{
+  margin-right: 15px;
+}
+/* 
+#imgEquipo{
+  display: flex;
+  align-items: left;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+#datosGenerales{
+  display: flex;
+  justify-content: center;
+ 
+} */
