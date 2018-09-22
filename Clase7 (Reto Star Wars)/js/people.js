@@ -170,9 +170,9 @@ function cargarDatosTabla(data) {
     let row = tabla.insertRow(index + 1);
     let cont = 0
     for (const key in item) {
-      if (index === 0) {
-        console.log(key)
-      }
+      // if (index === 0) {
+      //   console.log(key)
+      // }
       if (item.hasOwnProperty(key)) {
         let cell = row.insertCell(cont)
         switch (key) {
@@ -238,9 +238,9 @@ function cargarDatosTablaFilms(data) {
     let row = tablaFilms.insertRow(index + 1);
     let cont = 0
     for (const key in item) {
-      if (index === 0) {
-        console.log(key)
-      }
+      // if (index === 0) {
+      //   console.log(key)
+      // }
       if (item.hasOwnProperty(key)) {
         let cell = row.insertCell(cont)
         switch (key) {
@@ -304,9 +304,9 @@ function cargarDatosTablaSpecies(data) {
     let row = tablaSpecies.insertRow(index + 1);
     let cont = 0
     for (const key in item) {
-      if (index === 0) {
-        console.log(key)
-      }
+      // if (index === 0) {
+      //   console.log(key)
+      // }
       if (item.hasOwnProperty(key)) {
         let cell = row.insertCell(cont)
         switch (key) {
@@ -357,7 +357,8 @@ function cargarDatosTablaVehicles(data) {
     let cont = 0
     for (const key in item) {
       if (index === 0) {
-        console.log(key)
+        //console.log(key)
+        console.log(item)
       }
       if (item.hasOwnProperty(key)) {
         let cell = row.insertCell(cont)
@@ -404,9 +405,9 @@ function cargarDatosTablaStarships(data) {
     let row = tablaStarships.insertRow(index + 1);
     let cont = 0
     for (const key in item) {
-      if (index === 0) {
-        console.log(key)
-      }
+      // if (index === 0) {
+      //   console.log(key)
+      // }
       if (item.hasOwnProperty(key)) {
         let cell = row.insertCell(cont)
         switch (key) {
