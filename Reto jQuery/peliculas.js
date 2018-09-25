@@ -9,8 +9,7 @@ const parametrosPopulares = {
   language: 'es'
 }
 
-const parametrosMovie = {
-  movie_id: 0,
+const parametrosMovie = { 
   api_key: apiKey,
   language: 'es'
 }
@@ -60,16 +59,15 @@ function addCard(pelicula) {
   $('#contenedor').append(`
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
-        <img class="card-img-top" src='https://image.tmdb.org/t/p/w500${pelicula.poster_path}' alt="Card image cap">
+        <img class="card-img-top" src='https://image.tmdb.org/t/p/w500${pelicula.poster_path}' alt="Card image cap" style="height: 500px">
         <div class="card-body">
-          <h5 class="card-title">${pelicula.title}</h5>
-          <p class="card-text">${pelicula.overview}</p>
+          <h5 class="card-title">${pelicula.original_title}</h5>
+          <p class="card-text">${pelicula.overview.substring(0,200)} ...</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" onclick='detallePelicula(${pelicula.id})'>View</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary" onclick='detallePelicula(${pelicula.id})'>Ver Detalle</button>              
             </div>
-            <small class="text-muted">9 mins</small>
+            <small class="text-muted">Voto promedio ${pelicula.vote_average}</small>
           </div>
         </div>
       </div>
@@ -77,6 +75,25 @@ function addCard(pelicula) {
   `);
 }
 
-function detallePelicula(id) {
-  console.log('id pelicula', id)
+async function detallePelicula(id) {
+  try {
+    let url = urlMovie + id
+    const pelicula = await cargarDatos(url, parametrosMovie)
+    $('#imagenPelicula').attr('src',`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`)
+    $('#titulo').text(pelicula.original_title)
+    $('#descripcion').text(pelicula.overview)
+    $('#fechaLanzamiento').text(pelicula.release_date)
+    $('#home').attr('href',pelicula.homepage)
+    $('#contenedor').hide()  
+    $('#containerDetalle').show()    
+    console.log('Pelicula',pelicula)
+  } catch (error) {
+    console.log(error)
+  }
+  //console.log('id pelicula', id)
 }
+
+$('#volver').on('click',()=>{
+  $('#contenedor').show()  
+  $('#containerDetalle').hide() 
+})
