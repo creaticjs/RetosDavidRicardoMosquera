@@ -65,11 +65,20 @@
           <a href="https://www.themoviedb.org" class="btn btn-primary my-2">API</a>
           <a href="https://developers.themoviedb.org/3/getting-started/introduction" class="btn btn-secondary my-2">Documentacion</a>
         </p>
+        <div class="row justify-content-md-center">
+          <div class="input-group" style="max-width: 500px;">
+            <input type="text" class="form-control" placeholder="Ingrese el nombre de la pelicula" aria-label="Recipient's username"
+              aria-describedby="button-addon2" id="inputPelicula">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="buscarPelicula">Buscar</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <div class="album py-5 bg-light">
-      <div class="container">
+      <div class="container">        
         <div class="row" id="contenedor">
         </div>
         <div class="container" id="containerDetalle" style="display: none;">
@@ -103,6 +112,8 @@
     </div>
   </footer>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.min.js"></script>
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
