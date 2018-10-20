@@ -57,7 +57,6 @@ function addCard(pelicula) {
   //     'class': 'card mb-4 shadow-sm',      
   //   })
   // ).hide().appendTo('#otraDiv').fadeIn('slow'); 
-
   $('#contenedor').append(`
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
@@ -91,8 +90,7 @@ async function detallePelicula(id) {
     console.log('Pelicula', pelicula)
   } catch (error) {
     console.log(error)
-  }
-  //console.log('id pelicula', id)
+  }  
 }
 
 $('#volver').on('click', () => {
@@ -113,6 +111,5 @@ $('#buscarPelicula').on('click', () => {
     data.results.forEach(pelicula => {
       addCard(pelicula)
     });    
-  }   
-  
+  }  
 })
